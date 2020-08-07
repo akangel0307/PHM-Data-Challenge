@@ -60,7 +60,7 @@ LR = linear_model.LinearRegression()
 # #CoReg半监督回归
 # CoReg = coreg.Coreg(k1=3, k2=3, p1=2, p2=5, max_iters=100, pool_size=100, trials=1, verbose=False)
 #KNN回归
-KNN = KNeighborsRegressor(n_neighbors=3)
+KNN = KNeighborsRegressor(n_neighbors=15)
 #GPR
 GPR = GaussianProcessRegressor()
 #PLS
