@@ -80,18 +80,13 @@ ExtraTree=ExtraTreeRegressor()
 #sklearn的Bagging要求label为整形数据，但是label有float数据，bagging方法待实现
 tree=DecisionTreeClassifier(criterion='entropy')
 Bagging = BaggingClassifier(base_estimator=GBDT, n_estimators=500)
-
 #xgboost
 xgboost = xgb.XGBRegressor(max_depth=5, learning_rate=0.1, n_estimators=200, silent=True, objective='reg:gamma')
-
-#glmnetj
-
-
-#GMDH
+#glmnetj-ElasticNet
+ElasticNet=linear_model.ElasticNet()
 
 #将上述模型组合,方便下面依次调用各个模型
-models=[LR,KNN,GPR,PLS,RF,Ada,SVR,GBDT,ExtraTree,xgboost]
-
+models=[LR,KNN,GPR,PLS,RF,Ada,SVR,GBDT,ExtraTree,xgboost,ElasticNet]
 
 partitions = [120]
 splited_train_data = data_utils.split_data(train_data, partitions)

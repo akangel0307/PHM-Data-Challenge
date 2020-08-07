@@ -1,0 +1,7 @@
+1、xgboost
+离线下载链接：https://www.lfd.uci.edu/~gohlke/pythonlibs/#xgboost
+安装命令：pip install xgboost
+
+2、glmnet函数包
+官网链接：https://pypi.org/project/glmnet/
+安装命令：pip install glmnet
