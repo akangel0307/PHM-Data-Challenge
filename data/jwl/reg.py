@@ -68,7 +68,7 @@ PLS = PLSRegression(n_components=45)
 #RF
 RF = RandomForestRegressor()
 #AdaBoost
-GPR = AdaBoostRegressor()
+Ada = AdaBoostRegressor()
 #SVR
 SVR = svm.SVR()
 #GBDT
@@ -86,10 +86,11 @@ xgboost = xgb.XGBRegressor(max_depth=5, learning_rate=0.1, n_estimators=200, sil
 
 #glmnetj
 
+
 #GMDH
 
-#将上述模型组合
-models=[LR,KNN,GPR,GPR,RF,SVR,GBDT,ExtraTree,xgboost]
+#将上述模型组合,方便下面依次调用各个模型
+models=[LR,KNN,GPR,PLS,RF,Ada,SVR,GBDT,ExtraTree,xgboost]
 
 
 partitions = [120]
