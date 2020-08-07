@@ -67,7 +67,7 @@ GPR = GaussianProcessRegressor()
 PLS = PLSRegression(n_components=45)
 #RF
 RF = RandomForestRegressor()
-#ADA
+#AdaBoost
 GPR = AdaBoostRegressor()
 #SVR
 SVR = svm.SVR()
@@ -79,12 +79,14 @@ ExtraTree=ExtraTreeRegressor()
 #Bagging回归，采用500个决策树进行组合
 #sklearn的Bagging要求label为整形数据，但是label有float数据，bagging方法待实现
 tree=DecisionTreeClassifier(criterion='entropy')
-Bagging = BaggingClassifier(base_estimator=SVR, n_estimators=500)
+Bagging = BaggingClassifier(base_estimator=GBDT, n_estimators=500)
 
 #xgboost
 xgboost = xgb.XGBRegressor(max_depth=5, learning_rate=0.1, n_estimators=200, silent=True, objective='reg:gamma')
 
+#glmnetj
 
+#GMDH
 
 #将上述模型组合
 models=[LR,KNN,GPR,GPR,RF,SVR,GBDT,ExtraTree,xgboost]
