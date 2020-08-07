@@ -53,7 +53,6 @@ def generate_columns_name(columns, statistics):
             if column not in ['MACHINE_ID','MACHINE_DATA','TIMESTAMP','WAFER_ID','STAGE']:  #过滤掉dataframe_statistics表中没有的列名
                 columns_list.append(statistic + "_" + column)
     return columns_list
-
 def load_data(PATH, stage, stage_x):
     dataframe_x, dataframe_y = load_dataframe(PATH, stage, stage_x)
     train_data = abstract_statistics(dataframe_x, dataframe_y)
