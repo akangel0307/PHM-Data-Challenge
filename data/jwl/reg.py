@@ -82,7 +82,7 @@ tree=DecisionTreeClassifier(criterion='entropy')
 Bagging = BaggingClassifier(base_estimator=SVR, n_estimators=500)
 
 #xgboost
-xgboost = xgb.XGBRegressor(max_depth=5, learning_rate=0.1, n_estimators=160, silent=True, objective='reg:gamma')
+xgboost = xgb.XGBRegressor(max_depth=5, learning_rate=0.1, n_estimators=200, silent=True, objective='reg:gamma')
 
 
 
@@ -97,7 +97,7 @@ num_partitions = len(partitions) + 1
 
 for siglemodel in models:                                             #依次调用各个分类模型
     modleName=str(siglemodel).split("(")                              #提取出模型的名称
-    print(modleName[0]+"  "+"model")
+    print("当前使用的模型"+"  "+modleName[0]+"  "+"model")
     for num in range(num_partitions):                                 #将模型数据分为两段，每一段都进行单独的建模
         print('set{}'.format(num))
         train_data = splited_train_data[num]
