@@ -8,6 +8,13 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import AdaBoostRegressor
 from sklearn import linear_model
 from sklearn import svm
+from sklearn.ensemble import GradientBoostingRegressor
+from  sklearn.tree import ExtraTreeRegressor
+from sklearn.ensemble import BaggingClassifier
+from sklearn.tree import DecisionTreeClassifier
+import  xgboost as  xgb
+
+
 
 from sklearn.preprocessing import StandardScaler
 
@@ -33,7 +40,8 @@ def try_different_model(regressor, X_train, X_test, y_train, y_test):
     plt.plot(np.arange(len(y_test)),expected,color='blue',linewidth=1.0,marker = '.', linestyle='-',label='true value')
     plt.plot(np.arange(len(y_test)),predicted,color='red',linewidth=1.0,marker = '*', linestyle='-',label='predict value')
     plt.title(modleName+"  "+'prediction curve')
-    plt.legend(loc='upper right') 
+    plt.legend(loc='upper right')
+    plt.savefig(modleName +"  "+"model" +".png")                        # 保存模型图像
     plt.show()
     # 评价预测的准确性  
     print('MSE: ', mean_squared_error(expected, predicted))             # 均方误差，越小越好
@@ -63,9 +71,23 @@ RF = RandomForestRegressor()
 GPR = AdaBoostRegressor()
 #SVR
 SVR = svm.SVR()
+#GBDT
+GBDT = GradientBoostingRegressor()
+#ExtraTree
+ExtraTree=ExtraTreeRegressor()
+
+#Bagging回归，采用500个决策树进行组合
+#sklearn的Bagging要求label为整形数据，但是label有float数据，bagging方法待实现
+tree=DecisionTreeClassifier(criterion='entropy')
+Bagging = BaggingClassifier(base_estimator=SVR, n_estimators=500)
+
+#xgboost
+xgboost = xgb.XGBRegressor(max_depth=5, learning_rate=0.1, n_estimators=160, silent=True, objective='reg:gamma')
+
+
 
 #将上述模型组合
-models=[LR,KNN,GPR,GPR,RF,SVR]
+models=[LR,KNN,GPR,GPR,RF,SVR,GBDT,ExtraTree,xgboost]
 
 
 partitions = [120]
