@@ -41,7 +41,7 @@ def try_different_model(regressor, X_train, X_test, y_train, y_test):
     plt.plot(np.arange(len(y_test)),predicted,color='red',linewidth=1.0,marker = '*', linestyle='-',label='predict value')
     plt.title(modleName+"  "+'prediction curve')
     plt.legend(loc='upper right')
-    plt.savefig(modleName +"  "+"model" +".png")                        # 保存模型图像
+    plt.savefig(modleName +".png")                                      # 保存模型图像
     plt.show()
     # 评价预测的准确性  
     print('MSE: ', mean_squared_error(expected, predicted))             # 均方误差，越小越好
@@ -99,7 +99,7 @@ num_partitions = len(partitions) + 1
 
 for siglemodel in models:                                             #依次调用各个分类模型
     modleName=str(siglemodel).split("(")                              #提取出模型的名称
-    print("当前使用的模型"+"  "+modleName[0]+"  "+"model")
+    print("当前使用的模型"+"  "+modleName[0])
     for num in range(num_partitions):                                 #将模型数据分为两段，每一段都进行单独的建模
         print('set{}'.format(num))
         train_data = splited_train_data[num]
