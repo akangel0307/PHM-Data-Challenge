@@ -16,7 +16,7 @@ def loadData_Y(path,fileName="CMP-test-removalrate.csv"):
     y_path = os.path.join(path, fileName)          # CMP-test-removalrate.csv
     dataframe_y = pd.read_csv(y_path)
     # dataframe_y['AVG_REMOVAL_RATE']数值分为两段，第一段是60~110，另一段是140~160
-    # 所以大于1000的数据，可以认为是异常值，进行舍弃
+    # 大于1000的数据，可以认为是异常值，进行舍弃
     dataframe_y = dataframe_y.loc[dataframe_y['AVG_REMOVAL_RATE'] <= 1000]
     # plt.hist(dataframe_y['AVG_REMOVAL_RATE'])    # 绘制这一列数据的分布直方图
     # plt.show()

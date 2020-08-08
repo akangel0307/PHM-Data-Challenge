@@ -93,16 +93,16 @@ splited_train_data = data_utils.split_data(train_data, partitions)
 splited_test_data = data_utils.split_data(test_data, partitions)
 num_partitions = len(partitions) + 1
 
-for siglemodel in models:                                             #依次调用各个分类模型
-    modleName=str(siglemodel).split("(")                              #提取出模型的名称
+for siglemodel in models:                     #依次调用各个分类模型
+    modleName=str(siglemodel).split("(")      #当前预测模型的名称
     print("当前使用的模型"+"  "+modleName[0])
-    for num in range(num_partitions):                                 #将模型数据分为两段，每一段都进行单独的建模
+    for num in range(num_partitions):         #对数据进行分段
         print('set{}'.format(num))
         train_data = splited_train_data[num]
         X_train, y_train = data_utils.split_data_label(train_data)
         test_data = splited_test_data[num]
         X_test, y_test = data_utils.split_data_label(test_data)
-        ss = StandardScaler()                                         #Sklearn库函数，去均值和方差归一化
+        ss = StandardScaler()                 #Sklearn库函数，去均值和方差归一化
         X_train = ss.fit_transform(X_train)
         X_test = ss.transform(X_test)
         try_different_model(siglemodel, X_train, X_test, y_train, y_test)
