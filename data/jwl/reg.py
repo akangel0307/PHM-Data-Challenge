@@ -50,9 +50,9 @@ def try_different_model(regressor, X_train, X_test, y_train, y_test):
     print('R^2: ', r2_score(expected, predicted))                       # r2 score 满分1，越接近1越好
 
 ##############  load train and test   #############
-test_data = np.load("./data/test_data.npy")
-train_data = np.load("./data/train_data.npy")
-validation_data = np.load("./data/validation_data.npy")
+test_data = np.load("./Processed data set/test_data.npy")
+train_data = np.load("./Processed data set/train_data.npy")
+validation_data = np.load("./Processed data set/validation_data.npy")
 
 ########################### regressors config ###########################
 #线性回归
