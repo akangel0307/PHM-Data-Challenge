@@ -1,5 +1,6 @@
 1、xgboost
 离线下载链接：https://www.lfd.uci.edu/~gohlke/pythonlibs/#xgboost
+安装教程：https://blog.csdn.net/liudunhui_hit/article/details/93778218
 安装命令：pip install xgboost
 
 2、glmnet函数包
