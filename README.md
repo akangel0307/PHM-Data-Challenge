@@ -1,6 +1,6 @@
 # README
 
-## Data folders
+## 1、Data folders
 
 |            文件夹             |               相关描述               |
 | :---------------------------: | :----------------------------------: |
@@ -12,7 +12,7 @@
 
 
 
-## Code files
+## 2、Code files
 
 - data_utils.py：对数据集进行特征处理
 - regression.py：对数据集进行建模处理。所采用的模型包括但不限于：LR,KNN,GPR,PLS,RF,Ada,SVR,GBDT,ExtraTree,xgboost,ElasticNet
@@ -20,7 +20,7 @@
 
 
 
-## Requirements
+## 3、Requirements
 
 - Python 3
 
@@ -30,7 +30,7 @@
 
 
 
-## Experimental Results
+## 4、Experimental Results
 
 - 两模态划分实验
 
@@ -38,11 +38,15 @@
 | :--: | :----------------------------------: |
 | set1 | dataframe_y['AVG_REMOVAL_RATE']>=120 |
 
-
+**code usage**
 
 ```python
 python regression.py
 ```
+
+实验结果：【腾讯文档】PHM数据集双模态划分实验结果https://docs.qq.com/sheet/DZHROTnJXQ3ZhaXVL
+
+
 
 - 三模态划分实验
 
@@ -53,9 +57,10 @@ python regression.py
 | set1 | dataframe_y['AVG_REMOVAL_RATE']<120&stage='A' |
 | set2 | dataframe_y['AVG_REMOVAL_RATE']<120&stage='B' |
 
-
+**usage**
 
 ```python
 python SVR.py
 ```
 
+实验结果：
