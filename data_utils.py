@@ -48,7 +48,7 @@ def abstract_statistics(dataframe_x, dataframe_y, statistics=['mean','std','min'
 
     # data = pd.concat([dataframe_statistics, dataframe_y], ignore_index=True)
     data = pd.merge(dataframe_statistics, dataframe_y)
-    data.to_csv("data_final.csv", index=False, sep=',')
+    # data.to_csv("data_final.csv", index=False, sep=',')
     return data
 
 
