@@ -35,6 +35,8 @@
 
 - 两模态划分实验
 
+相关文件在twomode division experiment文件夹
+
 | set0 | dataframe_y['AVG_REMOVAL_RATE']<120  |
 | :--: | :----------------------------------: |
 | set1 | dataframe_y['AVG_REMOVAL_RATE']>=120 |
@@ -51,7 +53,7 @@ python regression.py
 
 - 三模态划分实验
 
-相关code文件在mode division experiment文件夹
+相关文件在three mode division experiment文件夹
 
 | set0 |      dataframe_y['AVG_REMOVAL_RATE']>120      |
 | :--: | :-------------------------------------------: |
@@ -61,7 +63,7 @@ python regression.py
 **usage**
 
 ```python
-python SVR.py
+python regression.py
 ```
 
-实验结果：
+实验结果：【腾讯文档】PHM数据集三模态划分实验结果https://docs.qq.com/sheet/DZHp5S1dKVklLVHlQ
