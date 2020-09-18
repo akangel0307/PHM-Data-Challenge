@@ -28,13 +28,32 @@
 
 - xgboost
 
+
+
 ## Experimental Results
 
-模态划分
+- 两模态划分实验
+
 
 set0---dataframe_y['AVG_REMOVAL_RATE']<120
 
 set1---dataframe_y['AVG_REMOVAL_RATE']>=120
 
+```python
+python regression.py
+```
 
+- 三模态划分
+
+code在mode division experiment文件夹
+
+set0---dataframe_y['AVG_REMOVAL_RATE']>120
+
+set1--- dataframe_y['AVG_REMOVAL_RATE']<120&stage='A'
+
+set2---dataframe_y['AVG_REMOVAL_RATE']<120&stage='B'
+
+```python
+python SVR.py
+```
 
