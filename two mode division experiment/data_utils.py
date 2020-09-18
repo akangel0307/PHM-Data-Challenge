@@ -92,14 +92,24 @@ def split_data_label(data):
     return x, y
 
 if __name__ == "__main__":
-    # 在D盘新建文件夹(命名为repos)，将data文件夹放入到该文件夹中
+    #分别生成训练数据集、测试数据集、验证数据集
+    # train_data
+    PATH = "D:\\repos\\data\\2016 PHM Data Challenge\\2016 PHM DATA CHALLENGE CMP DATA SET\\"
+    stage = "training"
+    stage_x = 'CMP-data\\'+stage
+    train_data = load_data(PATH, stage, stage_x)
+    np.save("./Processed data set/train_data.npy", train_data)
+
+    # test_data
     PATH = "D:\\repos\\data\\2016 PHM Data Challenge\\2016 PHM DATA CHALLENGE CMP DATA SET\\"
     stage = "test"
     stage_x = 'CMP-data\\'+stage
-    test_data = load_data(PATH, stage, stage_x)
-    print(test_data.shape)
-    splited_data = split_data(test_data, [120])
-    i = 0
-    for data in  splited_data:
-        print(i, data.shape)
-        i += 1
+    test_data =load_data(PATH, stage, stage_x)
+    np.save("./Processed data set/test_data.npy", test_data)
+
+    # validation_data
+    PATH = "D:\\repos\\data\\2016 PHM Data Challenge\\2016 PHM DATA CHALLENGE CMP VALIDATION DATA SET\\"
+    stage = "validation"
+    stage_x = stage
+    validation_data = load_data(PATH, stage, stage_x)
+    np.save("./Processed data set/validation_data.npy", validation_data)
