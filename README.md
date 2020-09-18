@@ -2,11 +2,12 @@
 
 ## Data folders
 
-|            文件夹             |            相关描述            |
-| :---------------------------: | :----------------------------: |
-| 2016 PHM Data Challenge、data | 这两个文件夹均是存放原始数据集 |
-|      Processed data set       |  存放做过特征选择处理的数据集  |
-|      model predict image      |    存放相关模型的预测走势图    |
+|            文件夹             |               相关描述               |
+| :---------------------------: | :----------------------------------: |
+| 2016 PHM Data Challenge、data |    这两个文件夹均是存放原始数据集    |
+|      Processed data set       |     存放做过特征选择处理的数据集     |
+|      model predict image      |       存放相关模型的预测走势图       |
+|   mode division experiment    | 存放对数据进行三模态划分后的相关文件 |
 
 
 
