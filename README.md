@@ -44,7 +44,7 @@
 python regression.py
 ```
 
-- 三模态划分
+- 三模态划分实验
 
 相关code文件在mode division experiment文件夹
 
